@@ -1,0 +1,48 @@
+#pragma once
+#ifndef FEETINCHES_H
+#define FEETINCHES_H
+#include <iostream>
+using namespace std;
+
+class FeetInches; // Forward Declaration
+
+// Function Prototypes for Overloaded Stream Operators
+ostream & operator << (ostream&, const FeetInches&);
+
+// The FeetInches class holds distances or measurements
+// expressed in feet and inches.
+
+class FeetInches
+{
+private:
+int feet; // To hold a number of feet
+int inches; // To hold a number of inches
+void simplify(); // Defined in FeetInches.cpp
+public:
+// Constructors
+FeetInches();
+FeetInches(int f, int i);
+FeetInches(const FeetInches& obj);
+// Mutator functions
+void setFeet(int f);
+void setInches(int i);
+ // Accessor functions
+int getFeet() const;
+int getInches() const;
+//Multiply Function
+FeetInches multiply(const FeetInches& obj) const;
+// Overloaded operator functions
+FeetInches operator + (const FeetInches&);       // Overloaded +
+FeetInches operator - (const FeetInches&);       // Overloaded −
+FeetInches operator ++ ();                       // Prefix ++
+FeetInches operator ++ (int);                    // Postfix ++
+FeetInches operator -- ();                       // Prefix --
+FeetInches operator -- (int);                    // Postfix --
+FeetInches operator=(const FeetInches& obj);     // Overloaded =
+bool operator < (const FeetInches& obj) const;   // Overloaded <
+bool operator == (const FeetInches& obj) const;  // Overloaded ==
+
+// Friends
+friend ostream & operator << (ostream&, const FeetInches&);
+};
+#endif
