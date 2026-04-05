@@ -46,4 +46,4 @@ FeetInches LandTract::getArea() const
 bool LandTract::operator==(const LandTract& right) const
 {
 	return getArea() == right.getArea(); // Compares the area of the current object with the area of the right object using the overloaded == operator in FeetInches class
-}
+} 
