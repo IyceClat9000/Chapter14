@@ -40,4 +40,4 @@ public:
 	bool operator ==(const LandTract& right) const;
 };
 
-#endif
+#endif 
