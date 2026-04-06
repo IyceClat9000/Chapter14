@@ -23,6 +23,8 @@ Month::Month(const Month& obj)
 	monthNumber = obj.monthNumber;
 }
 
+//Precondition: new valid month name
+//Postcondition: set the obj name and number to valid name and number or 0/unknown
 void Month::setName(string newName)
 {
 	string names[] = { "Unknown", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
@@ -40,11 +42,16 @@ void Month::setName(string newName)
 	}
 
 }
+
+//Precondition: N/A
+//Postcondition: return the name
 string Month::getName() const
 {
 	return name;
 }
 
+//Precondition: new valid month number
+//Postcondition: set the obj name and number to valid name and number or 0/unknown
 void Month::setMonthNumber(int n)
 {
 	string names[] = { "Unknown", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
@@ -60,11 +67,16 @@ void Month::setMonthNumber(int n)
 		name = names[0];
 	}
 }
+
+//Precondition: N/A
+//Postcondition: return the monthNumber
 int Month::getMonthNumber() const
 {
 	return monthNumber;
 }
 
+//Precondition: N/A
+//Postcondition: increment the month to next month and return the incremented month
 Month Month::operator++() // Overload Prefix ++
 {
 	string names[] = { "Unknown", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
@@ -83,6 +95,9 @@ Month Month::operator++() // Overload Prefix ++
 
 	return *this;
 }
+
+//Precondition: N/A
+//Postcondition: return the original month then increment the month to next month
 Month Month::operator++(int)
 {
 	Month temp(*this); //hold a temp here
@@ -106,6 +121,8 @@ Month Month::operator++(int)
 	return temp;
 }
 
+//Precondition: N/A
+//Postcondition: decrement the month to previous month and return the decremented month
 Month Month::operator--()
 {
 	string names[] = { "Unknown", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
@@ -124,6 +141,9 @@ Month Month::operator--()
 
 	return *this;
 }
+
+//Precondition: N/A
+//Postcondition: return the original month then decrement the month to previous month
 Month Month::operator--(int)
 {
 	Month temp(*this);
@@ -145,6 +165,8 @@ Month Month::operator--(int)
 	return temp;
 }
 
+//Precondition: a positive integer
+//Postcondition: return the incremented month
 Month Month::operator+(const int n) const
 {
 	Month temp(*this);
@@ -153,6 +175,8 @@ Month Month::operator+(const int n) const
 	return temp;
 }
 
+//Precondition: a positive integer
+//Postcondition: return the decremented month
 Month Month::operator-(const int n) const
 {
 	Month temp(*this);
@@ -161,6 +185,8 @@ Month Month::operator-(const int n) const
 	return temp;
 }
 
+//Precondition: a valid month object
+//Postcondition: return the deep copied month
 Month Month::operator=(const Month& obj)
 {
 	monthNumber = obj.getMonthNumber();
@@ -168,16 +194,22 @@ Month Month::operator=(const Month& obj)
 	return *this;
 }
 
+//Precondition: a valid month object
+//Postcondition: return true/false
 bool Month::operator<(const Month& obj) const
 {
 	return(monthNumber < obj.getMonthNumber() ? true : false);
 }
 
+//Precondition: a valid month object
+//Postcondition: return the deep copied month
 bool Month::operator==(const Month& obj) const
 {
 	return(monthNumber == obj.getMonthNumber() ? true : false);
 }
 
+//Precondition: a valid month object
+//Postcondition: display the month name and month number in a new line
 ostream& operator<<(ostream& out, const Month& obj)
 {
 	out << "\n\tMonth Name: " << obj.getName();
