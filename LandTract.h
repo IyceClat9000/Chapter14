@@ -38,6 +38,43 @@ public:
     // Precondition: Both objects have valid dimensions
     // Postcondition: Returns true if the area are equal
 	bool operator ==(const LandTract& right) const;
+
+	// Operator + to add two LandTract objects together by adding their areas
+	// Precondition: Both objects have valid dimensions
+	// Postcondition: Returns a new LandTract object with the area of the two added together
+	LandTract operator + (const LandTract& right);
+
+	// Assigment Operator
+	// Precondition:Both LandTract objects have valid dimensions
+	// Postcondition: Copies the dimensions of the right LandTract object to the left LandTract object
+	LandTract& operator = (const LandTract& right);
+
+	// Overloaded outstream operator for LandTract objects
+	// Precondition: LandTract object has valid dimensions
+	// Postcondition: Returns a formatted output of the LandTract's dimensions and area
+	friend ostream& operator << (ostream& out, const LandTract& tract);
+
+	// Prefix increment operator (increments length and width)
+	// Precondition: LandTract object has valid dimensions
+	// Postcondition: Increments the length and width of the LandTract by 1 inch each and returns the updated object
+	LandTract& operator ++();
+
+	// Postfix increment operator (increments length and width)
+	// Precondition: LandTract object has valid dimensions
+	// Postcondition: Increments the length and width of the LandTract by 1 inch each and returns the original object before incrementing
+	LandTract operator ++(int);
+
+	// Prefix decrement operator (decrements length and width)
+	// Precondition: LandTract object has valid dimensions
+	// Postcondition: Decrements the length and width of the LandTract by 1 inch each and returns the updated object
+	LandTract& operator --();
+
+	// Postfix decrement operator (decrements length and width)
+	// Precondition: LandTract object has valid dimensions
+	// Postcondition: Decrements the length and width of the LandTract by 1 inch each and returns the original object before decrementing
+	LandTract operator --(int);
+
 };
 
-#endif 
+#endif
+    
