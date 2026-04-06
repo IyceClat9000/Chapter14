@@ -11,7 +11,6 @@ ostream& operator << (ostream&, const FeetInches&);
 
 // The FeetInches class holds distances or measurements
 // expressed in feet and inches.
-
 class FeetInches
 {
 private:
@@ -23,13 +22,12 @@ public:
 	FeetInches();
 	FeetInches(int f, int i);
 	FeetInches(const FeetInches& obj);
-	// Mutator functions
+	// setter functions
 	void setFeet(int f);
 	void setInches(int i);
-	// Accessor functions
+	// getter functions
 	int getFeet() const;
 	int getInches() const;
-	double toFeet() const;
 	//Multiply Function
 	FeetInches multiply(const FeetInches& obj) const;
 	// Overloaded operator functions
@@ -42,6 +40,10 @@ public:
 	FeetInches operator=(const FeetInches& obj);     // Overloaded =
 	bool operator < (const FeetInches& obj) const;   // Overloaded <
 	bool operator == (const FeetInches& obj) const;  // Overloaded ==
+	// The following are for the challenge 9 problems--------------------
+	bool operator <= (const FeetInches& right) const;// Overloaded <=
+	bool operator >= (const FeetInches& right) const;// Overloaded >=
+	bool operator != (const FeetInches& right) const; // Overloaded !=
 
 	// Friends
 	friend ostream& operator << (ostream&, const FeetInches&);

@@ -1,4 +1,4 @@
-// Your name!
+// Thanh Phan
 // 3/31/2026
 // Chapter 14 - Assignment
 // Group members : Angelo Manzano, Thanh, Andy, Luis, Aleeza, and Sven.
@@ -155,11 +155,11 @@ void Challenge9()
     FeetInches compare3(3, 4);
     FeetInches compare4(5, 4);
     FeetInches compare5(5, 3);
-    
+
     cout << "\n\tHere are the objects we will compare.";
     cout << "\n\n\tCompare 1: " << compare1 << "\n\n";
     cout << "\n\tCompare 2:" << compare2 << "\n\n";
-        cout << "\n\tCompare 2 is ";
+    cout << "\n\tCompare 2 is ";
     if (!(compare2 <= compare1))
         cout << "NOT ";
     cout << "less than or equal to Compare 1.";

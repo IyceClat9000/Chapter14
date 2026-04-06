@@ -16,12 +16,14 @@ public:
 	Month(int n);
 	Month(const Month& obj);
 
+	//setters and getters
 	void setName(string newName);
 	string getName() const;
 
 	void setMonthNumber(int n);
 	int getMonthNumber() const;
 
+	//operators overloading
 	Month operator++(); //++Prefix
 	Month operator++(int); //Postfix++
 

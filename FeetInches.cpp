@@ -111,7 +111,7 @@ ostream& operator<<(ostream& out, const FeetInches& obj)
 // Overloaded + operator
 //Precondition: obj must be a defined object with positive inches and feet, inches should be in the range 1-12
 //Postcondition: Returns an object with the result of adding the two objects's feet and inches
-FeetInches FeetInches::operator + (const FeetInches & right)
+FeetInches FeetInches::operator + (const FeetInches& right)
 {
 	FeetInches temp;
 
@@ -125,7 +125,7 @@ FeetInches FeetInches::operator + (const FeetInches & right)
 // Overloaded − operator
 //Precondition: obj must be a defined object with positive inches and feet, inches should be in the range 1-12, left object should be greater in feet preferably
 //Postcondition: Returns an object with the result of subtracting the two objects's feet and inches
-FeetInches FeetInches::operator - (const FeetInches & right)
+FeetInches FeetInches::operator - (const FeetInches& right)
 {
 	FeetInches temp;
 	if (right.feet > feet)
@@ -226,5 +226,29 @@ bool FeetInches::operator == (const FeetInches& obj) const
 			return false;
 	else
 		return false;
+}
+
+// Overloaded <= operator
+//Precondition: object must be defined with positive inches and feet, inches should be 1-12
+//Postcondition: returns true if the object is less than or equal to the right object
+bool FeetInches::operator <= (const FeetInches& right) const
+{
+	return (*this < right) || (*this == right);
+}
+
+// Overloaded >= operator
+//Precondition: object must be defined with positive inches and feet, inches should be 1-12
+//Postcondition: returns true if the object is greater than or equal to the right object
+bool FeetInches::operator >= (const FeetInches& right) const
+{
+	return !(*this < right);
+}
+
+// Overloaded != operator
+//Precondition: object must be defined with positive inches and feet, inches should be 1-12
+//Postcondition: returns true if the object is not equal to the right object
+bool FeetInches::operator != (const FeetInches& right) const
+{
+	return !(*this == right);
 }
 

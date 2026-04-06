@@ -35,8 +35,8 @@ public:
 	FeetInches getArea() const;
 
 	// Operator==
-    // Precondition: Both objects have valid dimensions
-    // Postcondition: Returns true if the area are equal
+	// Precondition: Both objects have valid dimensions
+	// Postcondition: Returns true if the area are equal
 	bool operator ==(const LandTract& right) const;
 
 	// Operator + to add two LandTract objects together by adding their areas
@@ -77,4 +77,3 @@ public:
 };
 
 #endif
-    
